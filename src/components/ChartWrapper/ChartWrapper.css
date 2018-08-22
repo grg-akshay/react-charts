@@ -1,0 +1,7 @@
+@media screen and (min-width: 400px) {
+    .chart-container {
+        /* position: relative; */
+        height:80%;
+        width:90%;
+      }
+  }
