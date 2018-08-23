@@ -1,19 +1,17 @@
-#button-container> button{
+.button-container> button{
     cursor:pointer;
     overflow: hidden;
     background-color: #FFD84B;
     color: purple;
     padding: 10px;
-    margin: 0px 0px 0px 5px;
+    margin: 0 0 0 5px;
     border: none;
 }
 
-#button-container> .active, #1{
+.button-container> .active{
     background-color: rgb(51, 155, 146);
-
 }
 
-#button-container>#1{
+/* .button-container> button:first-of-type{
     background-color: rgb(51, 155, 146);
-
-}
+} */

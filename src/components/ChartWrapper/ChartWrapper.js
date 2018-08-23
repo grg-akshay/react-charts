@@ -7,7 +7,7 @@ import '../Buttons/Buttons.css';
 
 class ChartWrapper extends Component{
 
-constructor(props){
+  constructor(props){
     super(props);
     this.handleButtonClick=this.handleButtonClick.bind(this);
     this.handleFlag= this.handleFlag.bind(this);
@@ -39,9 +39,11 @@ constructor(props){
           ]
         }
       };
-}
+  }
 
-
+  componentDidMount(){
+    document.title='React charts';
+  }
 
   handleFlag(event, id, num){
     if(event.target.id===id && this.state.chartFlag!==num){
@@ -52,32 +54,31 @@ constructor(props){
             chartFlag:num
         })
     } 
-   }
+  }
+
   handleButtonClick(event){
     this.handleFlag(event, "1", 1);
     this.handleFlag(event, "2", 2);
-    this.handleFlag(event, "3", 3);
-   
+    this.handleFlag(event, "3", 3);  
   }
-render(){
-const arrayOfCharts=["Bar", "Doughnut", "Pie"];
-    return(
 
+render(){
+  const arrayOfCharts=["Bar", "Doughnut", "Pie"];
+    return(
         <div>
-            <div id='button-container'>
-            <Buttons 
-            chartTypes={arrayOfCharts} 
-            handleButtonClick={this.handleButtonClick}
-            />
+            <div className='button-container'>
+              <Buttons 
+              chartTypes={arrayOfCharts} 
+              handleButtonClick={this.handleButtonClick}
+              />
             </div>
 
             <div className='chart-container'>
-            <Charts 
-            chartFlag ={this.state.chartFlag}
-            chartData={this.state.chartData}
-            />
+              <Charts 
+              chartFlag ={this.state.chartFlag}
+              chartData={this.state.chartData}
+              />
             </div>
-
         </div>
     )
 }

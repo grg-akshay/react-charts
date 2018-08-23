@@ -1,7 +1,7 @@
 import React from 'react';
 import {Bar, Doughnut, Pie} from 'react-chartjs-2';
 import './Charts.css';
-
+import PropTypes from 'prop-types';
 
 const Charts= props => {
 
@@ -10,7 +10,7 @@ const Charts= props => {
              {props.chartFlag===1 &&
                 <Bar
                 data={props.chartData}
-                width={80}
+                width={100}
                 height={300}
                 options={{
                     title:{
@@ -74,5 +74,9 @@ Charts.defaultProps = {
     displayLegend: true,
     legendPosition:'right',
     location:'US'
+}
+
+Charts.propTypes={
+    chartFlag: PropTypes.number,
 }
 export default Charts;
